@@ -1,6 +1,6 @@
 package com.employee.entity;
 
-import java.util.Date;
+import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,7 +16,6 @@ public class Employee {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	
 	@Column(name="employee_id")
 	private int employeeId;
 	
@@ -82,6 +81,19 @@ public class Employee {
 		this.dateOfBirth = dateOfBirth;
 		this.email = email;
 		this.phoneNumber = phoneNumber;
+	}
+
+	public Employee() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public int getEmployeeId() {
+		// TODO Auto-generated method stub
+		return employeeId;
+	}
+	
+	public void setEmployeeId(int employeeId) {
+		this.employeeId = employeeId;
 	}
 
 }
