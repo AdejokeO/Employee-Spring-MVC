@@ -7,6 +7,7 @@
   <name>Employee parent</name>
   <modules>
   	<module>employee_data</module>
+  	<module>employee_service</module>
   </modules>
   <dependencies>
   <!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
@@ -46,6 +47,13 @@
     <scope>test</scope>
 </dependency>
 
+  <!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
+<dependency>
+    <groupId>org.mockito</groupId>
+    <artifactId>mockito-core</artifactId>
+    <version>3.3.0</version>
+    <scope>test</scope>
+</dependency>
   
   
   
