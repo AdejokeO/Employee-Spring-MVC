@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.List;
 
 import org.junit.After;
 import org.junit.Before;
@@ -108,6 +109,21 @@ public class EmployeeDaoImplTest {
 		assertThat(savedEmployee).isNotNull();
 		assertThat(savedEmployee.getEmployeeId()).isEqualTo(4);
 		System.out.println(savedEmployee);
+	}
+	
+	
+	@Test
+	public void getAllEmployeesTest() {
+		
+		assertThat(employeeDaoImpl).isNotNull();
+		
+		List<Employee> allEmployees = employeeDaoImpl.findAll();
+		
+		assertThat(allEmployees).isNotNull();
+		
+		assertThat(allEmployees).hasSize(5);
+		
+		allEmployees.forEach(System.out::println);
 	}
 	
 

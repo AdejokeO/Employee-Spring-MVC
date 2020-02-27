@@ -5,6 +5,8 @@ package com.employee.service;
 
 import static org.mockito.Mockito.*;
 
+import java.util.List;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -56,6 +58,42 @@ public class EmployeeServiceImpleTest {
 		
 		//verify the method was called
 		verify(employeeDaoImpl, times(1)).saveEmployee(tempEmployee);
+	}
+	
+	@Test
+	public void saveEmployeeIdTest() {
+		
+		Employee tempEmployee = new Employee();
+		
+		when(employeeDaoImpl.getById(1)).thenReturn(tempEmployee);
+		
+		employeeDaoImpl.getById(1);
+		
+		verify(employeeDaoImpl, times(1)).getById(1);
+	}
+	
+	@Test
+	public void getEmployeeByEmailTest() {
+		
+		Employee tempEmployee = new Employee();
+		
+		when(employeeDaoImpl.getByEmail("test@mail.com")).thenReturn(tempEmployee);
+		
+		employeeDaoImpl.getByEmail("test@mail.com");
+		
+		verify(employeeDaoImpl, times(1)).getByEmail("test@mail.com");
+	}
+	
+	@Test
+	public void findAllEmployeesTest() {
+		
+		List<Employee> employees = null;
+		
+		when(employeeDaoImpl.findAll()).thenReturn(employees);
+		
+		employeeDaoImpl.findAll();
+		
+		verify(employeeDaoImpl, times(1)).findAll();
 	}
 
 }

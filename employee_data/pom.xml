@@ -8,6 +8,11 @@
   <artifactId>employee_data</artifactId>
   <name>Employee data access</name>
   
+  <properties>
+	  <maven.compiler.source>12</maven.compiler.source>
+	  <maven.compiler.target>12</maven.compiler.target>
+  </properties>
+  
   <dependencies>
   
   	<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
